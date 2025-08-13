@@ -42,6 +42,99 @@
        
     </table>
 
+    <hr>
+
   <!-- thead, tbody, tfoot, th -->
+   <!-- table>tbody>tr 이 순서가 중요함 -->
+    <!-- th는 테이블의 행 하위에서 열을 삽입하기 위한 태그이지만 <th>는 '텍스트 굵게'기능과 '가운데 정렬' 기능이 탑재-->
+    <table>
+   <!-- table head:머리글 행은 이안에 -->
+    <thead>
+      <tr>
+        <!-- table header:타이틀(제목) -->
+         <th>제목</th>
+         <th>작성자</th>
+         <th>작성일</th>
+         <th>조회수</th>
+      </tr>
+    </thead>
+    <!-- table body:본문 행은 이안에 -->
+     <tbody>
+      <tr>
+        <td>안녕하세요</td>
+        <td>히포</td>
+        <td>2025.08.13</td>
+        <td>114</td>
+      </tr>
+      <tr>
+        <td>안녕하세요</td>
+        <td>히포</td>
+        <td>2025.08.13</td>
+        <td>114</td>
+      </tr>
+     </tbody>
+     <!-- table footer: 바닥글 행은 이안에 -->
+      <tfoot>
+        <td>결제금액</td>
+        <td></td>
+        <td></td>
+        <td>1,500,000원</td>
+      </tfoot>
+    </table>
+
+<hr>
+<!-- colspan, rowspan: 셀병합(merge) -->
+ <table>
+  <tr>
+    <td colspan="2">1</td>
+    <!-- <td>2</td> -->
+    <td>3</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>5</td>
+    <td rowspan="2">6</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>8</td>
+    <!-- <td>9</td> -->
+  </tr>
+ </table>
+
+ <br>
+ <!-- Quiz 셀병합 -->
+  <table>
+    <tr>
+      <td>1</td>
+      <td colspan="2">2</td>
+      <!-- <td>3</td> -->
+      <td>4</td>
+    </tr>
+    <tr>
+      <td rowspan="3">5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <!-- <td>9</td> -->
+      <td>10</td>
+      <td colspan="2", rowspan="2">11</td>
+      <!-- <td>12</td> -->
+    </tr>
+    <tr>
+      <!-- <td>13</td> -->
+      <td>14</td>
+      <!-- <td>15</td> -->
+     <!-- <td>16</td> -->
+    </tr>
+  </table>
+
+
+
+
+
+
 </body>
 </html>

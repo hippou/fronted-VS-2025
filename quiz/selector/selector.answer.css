@@ -34,6 +34,10 @@ header ul.main-menu{
 input[type="text"]:focus:not(input[readonly]){
 
   background-color: red;
+
+  /* focus시 outline이 생김 -그래서 안보임 */
+  /* outline: none;
+  border:2px solid red; */
 }
 
 

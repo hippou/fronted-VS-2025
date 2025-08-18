@@ -49,7 +49,7 @@
     /* 2.(특정한 요소를 선택하는)가상 클래스 선택자 */
     /* 
     :first-child(첫번째 자식 요소)
-    :last-child(자미작 자식 요소)
+    :last-child(마지막 자식 요소)
     */
     /* .fruits span:first-child {
       color:red;
@@ -60,9 +60,9 @@
       color:red;
     } */
 
-    /* .fruits h3:last-child{
+   /* .fruits h3:last-child{
       color:red; 
-    } */
+    }    */
 
     /* :nth-child(n) (n번째 자식요소) */
     /* .fruits *:nth-child(2n){
@@ -93,14 +93,15 @@
     /* 중요:n이 앞에 나와야 동작한다. */
     /* .fruits *:nth-child(-n+3) {
       color:red;
-    }
+    }*/
 
-    .fruits *:not(:nth-child(n+4)) {
+    /* .fruits *:not(:nth-child(n+4)) {
       color:red; 
-    }
+    } */
 
-    .fruits *:nth-last-child(n+3){
-      color:red;
+    /*last가 들어가면 거꾸로 세어진다. */
+   /* .fruits *:nth-last-child(n+3){
+      color:blue;
     } */
 
 

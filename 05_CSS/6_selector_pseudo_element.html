@@ -9,13 +9,13 @@
     /* 가상 요소 선택자:HTML에 가상의 요소를 생성 또는 제어 가능 */
     /* 
     ::before, ::after 사용시 
-    반드시 css의 content 속성과 같이 사용
+    중요!!! 반드시 css의 content 속성과 같이 사용
     */
     .box{
       width:120px;
       height:100px;
       background-color: orange;
-      overflow:auto; /*넘친내용이 있을때 스크롤바를 만들어준다. 기본값은 visible*/
+      overflow:auto; /* 넘친내용이 있을때 스크롤바를 만들어준다. 기본값은 visible */
     }
 
     /* ::before(요소의 내부 앞에 내용 삽입) */
@@ -28,7 +28,7 @@
       width: 10px;
       height:30px;
       background-color: royalblue;
-      /*가상 요소는 인라인 요소이기 때문에 가로/세로 지정이 불가->블록요소로 전환 */
+      /*가상 요소는 인라인 요소이기 때문에 가로/세로 지정이 불가->블록요소 OR 인라인블록요소로 전환 */
       display: inline-block;
       /* display:block;  */
     }

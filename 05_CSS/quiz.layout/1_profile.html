@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+/* .profile{
+  text-align: center;
+} */
+
+div.profile>img{
+  /*(참고)img는 인라인요소지만 인라인-블록처럼 동작 */
+  width: 100px;
+  height:100px;
+  /* 요소를 원으로 만들기 */
+  border-radius: 50%;
+  /* 이미지 가운데 정렬하기(2가지) */
+  /* 1.부모에(여기서는 div태그) text-align:center */
+  /* 2.가로길이를 갖는 블록 요소에 maring:0 auto; */
+  display:block;
+  margin:0 auto;
+  
+
+}
+
+h3.title{
+  text-align:center;
+  font-weight: 900;
+  font-size:24px;
+  text-decoration: wavy;
+}
+
+h5.title{
+  text-align:center;
+  font-weight: 700;
+}
+
+span#a{
+  color:red;
+  font-weight:700;
+}
+
+div.box{
+  width:400px;
+  border-radius: 5px;
+  background-color:cornflowerblue;
+  color:white;
+  margin:0 auto;
+  box-shadow: 5px 5px black;
+  padding:20px 0;
+ 
+}
+
+p.content{
+  font-weight:400;
+  text-align: center;
+  font-style: sans-serif;
+}
+
+
+
+
+</style>
+  
+</head>
+<body>
+  <!-- 주어진 구조 외에 추가 가능 -->
+  
+  <div class="profile">
+    <img src=" https://octapi.lxzin.com/interior/vImgFileSeq/202210/11/8ede80a1-1d0c-4839-bcc3-97bd4f357ecd.jpg " alt="고양이">
+  </div>
+  <h3 class="title">고양이</h3>
+  <h5 class="title">
+    <span id="a">Full Stack</span> Developer</h5>
+  
+  <div class="box" >
+    <p class="content">안녕하세요 제 이름은 고양이 입니다.<br> 
+      취미는 츄르 먹기입니다.</p>
+  </div>
+</body>
+</html>

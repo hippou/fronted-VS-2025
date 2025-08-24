@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing:border-box;
+    }
+    html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    }
+
+    .login-container{
+      width:460px;
+      height:auto;
+      border-radius:8px;
+      border:1px solid #c5ccd2;
+      margin:0 auto;
+      padding:25px;
+      
+    }
+    .id-box,.pw-box{
+      height:60px;
+      border-radius:8px;
+      border:1px solid #c5ccd2;
+      padding:10px;
+    
+     
+    }
+    #id,#pw{
+      width:100%;
+      display:block;
+      height:22px;
+      font-weight:400;
+      letter-spacing: -.2px;
+      color:#1e1e23;
+      outline: none;
+      border: none;
+      cursor:pointer;
+ 
+    }
+    #id1,#pw1{
+    color:#737373;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+    }
+
+    #view{
+      top:10px;
+      right:36px;
+      width:40px;
+      height:40px;
+      border:none;
+      position:absolute;
+      z-index:10;
+    }
+   
+    .button{
+      width:100%;
+      display:block;
+      padding:13px 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 10px;
+    }
+    .btna,.btnb:hover{
+      cursor: pointer;
+    }
+    
+    .btna{
+      margin-top: 20px;
+      font-weight:bold;
+      font-size: 18px;
+      background-color:#09aa5c ;
+      padding:13px 20px;
+      border: none;
+      border-radius:8px;
+    }
+
+    .btnb{
+      font-weight:bold;
+      font-size: 18px;
+      color:#09aa5c ;
+      background-color: white;
+      padding:13px 20px;
+      border: 1px solid #09aa5c ;
+      border-radius:8px;
+
+    }
+
+ 
+
+
+
+  </style>
+
+
+</head>
+<body>
+  <div class="login-background">
+    <div class="login-container">
+      <div class="id-box">
+        <label id="id1">아이디 또는 전화번호</label>
+        <input type="text" id="id">
+      </div>
+      <div class="pw-box">
+        <label id="pw1">비밀번호</label>
+        <input type="password" id="pw" p>
+      </div>
+      <div class="button">
+      <button type="button", class="btna">로그인</button>
+      <button type="button", class="btnb">회원가입</button>
+      </div>
+  </div>
+</body>
+</html>

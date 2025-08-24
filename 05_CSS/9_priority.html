@@ -14,11 +14,11 @@
     */
 
     /*우선순위 점수가 낮은것부터 실습 */
-    /*body(상속)->전체->태그->클래스->아이디->인라인스타일->!important */
+    /*body(상속)->전체(*)->태그(<>)->클래스->아이디->인라인스타일->!important */
     
    /* 개발자 도구로 확인시 우선순위 점수가 높은순으로 표시됨 */
     div{
-    color: red;
+      
 
     /* !important는 점수가 무한대 
        되도록이면 사용 지양
@@ -27,36 +27,42 @@
        안되는 겅우에만 사용! 
     */
 
-    color:red !important;
+    /* color:red !important; */
    }
    
    
-    #hello{
+    /* #hello{
       color:yellow;
-    }
+    } */
         
     /*선택자를 여러개 사용하여 명확하게 선택하면 우선수위가 올라감 */
-    div.hello{
+    /* div.hello{
       color:green;
-    }
+    } */
+
     /*점수가 같으면 가장 마지막에 해석된 스타일이 적용 */
-    .hello{
+    /* .hello{
       color: orange;
-    }
+    } */
+
+    /* .hello{
+      color:yellowgreen;
+    } */
     
     div{
       color:royalblue;
     }
     
     *{
-      color:darkblue;
+      color:olive;
     }
     
     
-    body{
+    /*상속은 브라우저 기본 스타일보다도 우선순위가 낮음 */
+    /* body{
       color:violet;
-      /*상속은 브라우저 기본 스타일보다도 우선순위가 낮음 */
-    }
+
+    } */
 
   </style>
 </head>
@@ -64,6 +70,7 @@
   <div 
     id="hello" class="hello"
     style="color:brown;"
+  
   >
 
     Hello world!

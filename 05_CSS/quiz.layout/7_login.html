@@ -4,120 +4,123 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <!-- 구글 머티리얼 아이콘 -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
   <style>
-    *{
-      box-sizing:border-box;
-    }
-    html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;     
+    * {
+      box-sizing: border-box;
     }
 
-    .login-container{
-      width:460px;
-      height:auto;
-      border-radius:8px;
-      border:1px solid #c5ccd2;
-      margin:0 auto;
-      padding:25px;
-      
-    }
-    .id-box,.pw-box{
-      height:60px;
-      border-radius:8px;
-      border:1px solid #c5ccd2;
-      padding:10px;
-    
-     
-    }
-    #id,#pw{
-      width:100%;
-      display:block;
-      height:22px;
-      font-weight:400;
-      letter-spacing: -.2px;
-      color:#1e1e23;
-      outline: none;
-      border: none;
+    .form-input{
+      width:100%; 
+      outline:none; 
+      border:none; 
       cursor:pointer;
- 
-    }
-    #id1,#pw1{
-    color:#737373;
-    font-weight: 400;
-    line-height: 22px;
-    letter-spacing: -0.2px;
     }
 
-    #view{
-      top:10px;
-      right:36px;
-      width:40px;
-      height:40px;
-      border:none;
-      position:absolute;
-      z-index:10;
-    }
-   
-    .button{
+    /* 버튼의 공통 스타일 */
+    .btn{
       width:100%;
-      display:block;
-      padding:13px 0;
-      display: flex;
-      flex-direction: column;
-      row-gap: 10px;
+      padding:12px 20px; 
+      border:none;
+      border-radius: 8px;
+      font-size:17px;
+      font-weight:700;
+      cursor:pointer;
+
     }
-    .btna,.btnb:hover{
+    /* 버튼의 개별 스타일 */
+    .btn-login{
+      background-color: #09aa5c;
+      margin-top:40px;
+
+    }
+    .btn-join{
+      border:1px solid #09aa5c;
+      color:#09aa5c;
+      background-color: #fff;
+      margin-top: 10px;
+    }
+    .login-container {
+      width:460px;
+      border:1px solid #e1e3e5;
+      border-radius:12px;
+      padding:24px;
+    }
+
+    .login-background{
+     /* height:100%; 실수 많이함! 이거는 body의 100%이기때문에 변화가 없음 */
+     /* 중요!!!! 뷰포트의 높이만큼 가득 채우려면 100%가 아님 */
+     height:100vh;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+    }
+
+    .login-container .id-box,
+    .login-container .pw-box{
+      height:60px;
+      border: 1px solid #c5ccd2; 
+      /*input을 아래에 배치하기 위해 패딩을 넣음 */
+      padding:27px 15px 8px;
+      position:relative;
+    }
+
+    .login-container .id-box{
+      border-radius: 8px 8px 0 0;
+  
+
+    }
+    
+    .login-container .pw-box{
+      border-radius: 0 0 8px 8px;
+      /*두개가 겹쳐서 두꺼워 보이는 border를 조정하는 법 */
+      border-top: 0;
+    }
+
+    .login-container .text-label{
+      position:absolute; 
+      bottom:18px;
+      left:15px;
+      color: rgba(0,0,0,0.5);
+      transition:0.4s;
+    }
+
+    .login-container .form-input:focus+ .text-label{
+      font-size:12px;
+      bottom:30px;
+
+    }
+    
+    .login-container .icon-eye {
+      position:absolute;
+      top:18px;
+      right:15px;
       cursor: pointer;
     }
-    
-    .btna{
-      margin-top: 20px;
-      font-weight:bold;
-      font-size: 18px;
-      background-color:#09aa5c ;
-      padding:13px 20px;
-      border: none;
-      border-radius:8px;
-    }
-
-    .btnb{
-      font-weight:bold;
-      font-size: 18px;
-      color:#09aa5c ;
-      background-color: white;
-      padding:13px 20px;
-      border: 1px solid #09aa5c ;
-      border-radius:8px;
-
-    }
-
- 
 
 
 
   </style>
-
-
 </head>
 <body>
   <div class="login-background">
     <div class="login-container">
       <div class="id-box">
-        <label id="id1">아이디 또는 전화번호</label>
-        <input type="text" id="id">
+        <input type="text" id="id" class="form-input">
+        <label for="id" class="text-label">아이디 또는 전화번호</label>
       </div>
       <div class="pw-box">
-        <label id="pw1">비밀번호</label>
-        <input type="password" id="pw" p>
+        <input type="password" id="pw" class="form-input">
+        <label for="pw" class="text-label">비밀번호</label>
+        <span class="material-symbols-outlined icon-eye">visibility_off</span>
       </div>
-      <div class="button">
-      <button type="button", class="btna">로그인</button>
-      <button type="button", class="btnb">회원가입</button>
-      </div>
+
+      <button type="button" class="btn btn-login">로그인</button>
+      <button type="button" class="btn btn-join">회원가입</button>
+    </div>
   </div>
 </body>
 </html>

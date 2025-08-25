@@ -69,21 +69,35 @@
     document.write('Good night','<br>');
    }
 
-   //quiz:
-   const month = Number(prompt("현재는 몇 월입니까?",''));
-   if(3<=month &&month<=5) {
-    document.write('햇살 가득한 봄이네요');
-   } else if(6<=month&&month<=8) {
-    document.write('여행 가기 좋은 여름이네요!!');
-   } else if(9<=month&&month<=11) {
-    document.write('독서의 계절 가을이네요!!');
-   } else if(month===12||month===1||month===2)
-    {
-    document.write('눈이 오는 겨울이네요!!');
-   } else{
-    document.write('잘못 입력하셨어요!!');
+   //quiz: prompt()함수는 항상 문자열 형태로 값을 반환함
+  //  const month = Number(prompt("현재는 몇 월입니까?",''));
+  //  if(3<=month &&month<=5) {
+  //   document.write('햇살 가득한 봄이네요');
+  //  } else if(6<=month&&month<=8) {
+  //   document.write('여행 가기 좋은 여름이네요!!');
+  //  } else if(9<=month&&month<=11) {
+  //   document.write('독서의 계절 가을이네요!!');
+  //  } else if(month===12||month===1||month===2)
+  //   {
+  //   document.write('눈이 오는 겨울이네요!!');
+  //  } else{
+  //   document.write('잘못 입력하셨어요!!');
+  //  }
+  //조건식에 논리형 데이터(true/false)가 아닌 다른 타입의 데이터가 입력됐을 때
+  //0,null,false,NaN,''(빈문자) 는 false값, 그 외의 값은 true
+   if(3) {
+    document.write('true로 취급','<br>');
    }
 
+   //(응용) 정상적인 값이 들어왔는지 판단
+   const userName = prompt('방문자의 이름은?',"");
+  //  if(userName !== '') {
+  //   alert(userName+'님 반갑습니다!');
+  //  }
+
+    if(userName.length>0) {
+    alert(userName+'님 반갑습니다!');
+   }
   </script>
 </body>
 </html>

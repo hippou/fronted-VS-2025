@@ -15,18 +15,19 @@
       /*전환 효과를 1초 동안 주기 */
       /* transition:1s;  */
       /*width값에만 전환 효과 주기(배경색은 확바뀜) */
-      /* transition:width 5s; */
+      /* transition:width 3s; */
       /*지속 시간을 더 짧게 지정 = 더 빠른 전환 효과 */
       /* transition: width 0.1s; */
       /* 전환 효과를 여러 개 설정하기 */
-      /* transition:width 0.5s, background-color 5s; */
-      /*대기 시간 지정- 두번째 시간은 대기 시간을 의미 */
-      transition:1s 3s; 
+      transition:width 0.5s, background-color 3s;
+      /*대기 시간 지정- 두번째 시간은 대기 시간을 의미 (아래:3초있다가 변경)*/
+      /* transition:1s 3s;  */
 
     }
 
     /*후상태 */
     .test:active{
+
       width:300px;
       background-color: royalblue;
   

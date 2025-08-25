@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //조건문
+    //조건식의 결과(true/false)에 따라 코드의 실행여부나 실행 경로(분기)가 결정되는 구문
+    //if문과 switch문
+    //1.if, else, else if 
+    //1)if문
+    //조건식을 만족하는 경우에만 코드블록을 실행 
+    let age=17;
+    let isAdult=false; 
+
+    if(age>19) {
+      isAdult = true; 
+    }
+    document.write(isAdult, '<br>');
+
+    //2)if-else문 
+    //조건식의 결과에 따라 두가지 중 하나를 실행시킬때 사용
+    age=19; 
+    if(age>18) {
+      isAdult=true;
+    } else {
+      isAdult=false;
+    }
+    document.write(isAdult,'<br>');
+   //window.confirm('메세지') :확인 상자는 사용자가 무언가를 확인하거나 수락하기를 원하는 경우에 사용 
+   //확인을 누르면 true, 취소를 누르면 false를 반환
+  //  const result=confirm('회원 탈퇴를 하시겠습니까?');
+  //  if(result) {
+  //   document.write('탈퇴 처리 되었습니다!');
+  //  } else {
+  //   document.write('탈퇴 취소 되었습니다!');
+  //  }
+
+
+   //Quiz
+   //promp는 사용자한테 입력받는 값
+  //  const num = prompt('숫자입력','0');
+  //  if(num%2===0) {
+  //   document.write('짝수입니다.');
+  //  } else{
+  //   document.write('홀수입니다.');
+  //  }
+
+   //또는 (위에 코드가 더 명확)
+  //  if(num%2) {
+  //   document.wrtie('홀수입니다.');
+  //  } else{
+  //   document.write('짝수입니다.');
+  //  }
+
+   //3) if-else if문
+   //여러 if문 조건식 중 만족하는 것을 찾아 실행, 만족하는게 없으면 else문 실행 
+   const hour=20;
+   if(hour<10) {
+    document.write('Good morning', '<br>');
+   } else if(hour<18) {
+    document.write('Good afternoon','<br>');
+   }else if(hour<21) {
+    document.write('Good evening','<br>');
+   } else {
+    document.write('Good night','<br>');
+   }
+
+   //quiz:
+   const month = Number(prompt("현재는 몇 월입니까?",''));
+   if(3<=month &&month<=5) {
+    document.write('햇살 가득한 봄이네요');
+   } else if(6<=month&&month<=8) {
+    document.write('여행 가기 좋은 여름이네요!!');
+   } else if(9<=month&&month<=11) {
+    document.write('독서의 계절 가을이네요!!');
+   } else if(month===12||month===1||month===2)
+    {
+    document.write('눈이 오는 겨울이네요!!');
+   } else{
+    document.write('잘못 입력하셨어요!!');
+   }
+
+  </script>
+</body>
+</html>

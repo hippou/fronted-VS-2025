@@ -8,6 +8,11 @@
 <body>
   <!--*-->
   <button type="button" onclick="changeColor()">배경색 바꾸기</button>
+  <!--**-->
+  <input type="text" id="id" placeholder="아이디" aria-label="아이디"> 
+  <input type="password" id="pw" placeholder="비밀번호" aria-label="비밀번호">
+  <button type="button" class="btn-login">로그인</button>
+  <hr>
   <script>
       // 함수
     // 기능(동작)을 수행하는 여러 실행 코드들의 묶음(그룹화)
@@ -105,7 +110,65 @@
     introduce('김재현','영등포','무의미한 데이터');
 
     //로그인 함수 만들기
+    const dbUser ={
+      id:'goni',
+      pw:'1234',
+      name:'김재현'
+    };
+  //Quiz: login 함수 선언하고 호출하기
+  //잘못된 id입력: alert('존재하지 않는 아이디입니다.');
+  //잘못된 pw입력: alert('잘못된 비밀번호입니다.');
+  //로그인 성공시: alert('~~~님 방문을 환영합니다!');
+  //풀이1
+  // function login(inputId,inputPw) {
+  //   if(dbUser.id===inputId) {
+  //     if(dbUser.pw===inputPw) {
+  //     alert(`${dbUser.name}님 방문을 환영합니다!`)
+  //   } else{
+  //     alert('잘못된 비말번호 입니다.')
+  //   }
+  //   } else{
+  //     alert('존재하지 않는 아이디입니다.')
+  //   } ;
+  // }
+  //풀이2:오류 케이스를 먼저 체크하는 방식 (권장-코드가 더 간결해짐)
+  // function login(inputId,inputPw) {
+  // if(dbUser.id!==inputid) {
+  //   alert('존재하지 않는 아이디입니다.')  
+  //  } else if(dbUser.pw!==inputPw) {
+  //   alert('잘못된 비말번호 입니다.')
+  //  }else{
+  //   alert(`${dbUser.name}님 방문을 환영합니다!`)
+  //   } ;}
+
+  //풀이3: early return 패턴 적용
+  function login(inputId,inputPw) {
+    if(dbUser.id!==inputid) {
+    alert('존재하지 않는 아이디입니다.')  
+    return;
+   }
+    if(dbUser.pw!==inputPw) {
+    alert('존재하지 않는 아이디입니다.')  
+    return;
+   }
+    alert(`${dbUser.name}님 방문을 환영합니다!`)
+    ;}
     
+   
+  //위에 **참조
+  const inputId=document.querySelector('#id');
+  const inputPw=document.querySelector('#pw');
+  const btnLogin = document.querySelector('.btn-login');
+ //btnLogin.addEventListener('이벤트명','함수');
+  btnLogin.addEventListener('click',function(){//익명함수
+  
+  login(inputId.value,inputPw.value);});
+
+
+
+
+
+
 
     // 4) 함수에서 return문의 역할
     // 데이터(결과값)를 반환

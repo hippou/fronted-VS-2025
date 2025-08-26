@@ -64,17 +64,18 @@
     const colors = ['yellow','aqua','purple','white'];
     //document의 객체 DOM
     //bodyTag는 자바스크립트의 객체
+    //"HTML 문서에서 <body> 태그를 찾아서,그걸 bodyTag라는 이름으로 저장해놓자."
     const bodyTag = document.querySelector('body'); 
     let index =0; 
 
     function changeColor() {
       //QUIZ: index가 4이상 일 때 다시 0부터 시작 
-      while(index>=4) {
-   
+      if(index>=colors.length) {
+       index=0; 
+      }
        bodyTag.style.backgroundColor = colors[index++];}
-      
-    
-    };
+
+  
 
 
 
@@ -94,8 +95,17 @@
     //   실행코드;
     // }
     // 함수명(인자값1, 인자값2, ...);
+       function introduce(name,area='대한민국') {//ES6차
+    // function introduce(name, area) { //외부에서 받을 데이터가 있으면 매개변수(Parameters)선언
+      document.write(`안녕하세요. ${name}입니다.<br>`);
+      document.write(`사는 곳은 ${area}입니다.<br>`);
+    }
+    introduce('김재현','영등포'); //인수(인자값,매개값,Arguments)를 전달
+    introduce('김재현'); //js는 느슨한 언어이기때문에 인자값 개수를 안맞춰도 된다. 
+    introduce('김재현','영등포','무의미한 데이터');
 
-
+    //로그인 함수 만들기
+    
 
     // 4) 함수에서 return문의 역할
     // 데이터(결과값)를 반환

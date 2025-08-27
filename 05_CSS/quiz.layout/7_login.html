@@ -68,9 +68,13 @@
       position:relative;
     }
 
+    .login-container .id-box.focused,.login-container .pw-box.focused {
+      border:2px solid #09aa5c;
+    }
+
+
     .login-container .id-box{
       border-radius: 8px 8px 0 0;
-  
 
     }
     
@@ -103,6 +107,9 @@
 
 
 
+
+
+
   </style>
 </head>
 <body>
@@ -122,5 +129,49 @@
       <button type="button" class="btn btn-join">회원가입</button>
     </div>
   </div>
+
+  <script> //입력했을때 눈이 안보이게
+    const eyeIcon = document.querySelector('.icon-eye');
+    const pwInput = document.querySelector('#pw');
+    eyeIcon.addEventListener('click',function() {
+      const isHidden = pwInput.type === "password";
+
+     pwInput.type = isHidden ? "text" : "password";
+     eyeIcon.textContent = isHidden ? "visibility_off" : "visibility";
+    });
+
+
+
+
+
+
+
+
+
+
+
+    const inputEls = document.querySelectorAll('input.form-input');
+    inputEls.forEach(function(inputEl){
+      console.log(inputEl);
+      const parentEl = inputEl.parentElement; //부모요소를 반환
+      console.log(parentEl);
+
+
+
+      //포커스가 주어졌을때 발생
+      inputEl.addEventListener('focus',function(){
+        parentEl.classList.add('focused');
+      });
+
+      //blur:포커스를 읽을때 발생
+      inputEl.addEventListener('blur',function(){
+        parentEl.classList.remove('focused');
+      });
+
+    });
+
+  
+
+  </script>
 </body>
 </html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 800px;
+      height: 500px;
+      border:1px solid orange;
+    }
+
+    .img{
+      width:50px;
+      height:50px;
+    }
+  </style>
+</head>
+<body>
+  <div><h1>귤농장</h1></div>
+  <div> 
+    <button type="귤농장" class="btn" >체험시작</button>
+  </div>
+  <div class="box">
+    
+  </div>
+  <div><h1>체험종료! 집가세요!!!</h1></div>
+  
+<script>
+  const btn=document.querySelector(".btn");
+  const box=document.querySelector(".box");
+  const img1=document.querySelector(".image");
+  
+
+  btn.addEventListener('click',function(){
+    const totalWeight = Number(prompt("귤을 몇g까지 딸 수 있어요???!!!!!!"));
+    //귤1개당 10g
+    const totalCount = parseInt(totalWeight/10);
+    box.innerHTML='';
+    for(let i=1;i<=totalCount;i++) {
+      box.innerHTML+= `<img src="./images/gyul.png" alt="귤" class="img">`;
+
+    } 
+  })
+  
+
+  
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

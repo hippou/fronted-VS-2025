@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div><h1>날씨확인</h1></div>
+  <div>
+    <label>계절
+    <input type="radio" name="season1" class="season" value="Spring">봄
+    <input type="radio" name="season1" class="season" value="Summer">여름
+    <input type="radio" name="season1" class="season" value="Fall">가을
+    <input type="radio" name="season1" class="season" value="Winter">겨울
+    </label>
+  </div>
+  <div>
+    <label for="temp">기온
+      <input type="number" id="temp">
+    </label>
+  </div>
+  <div>
+    <button type="button" class="button">확인</button>
+  </div>
+
+<script>
+  const temp =document.getElementById('temp');
+  const seasons= document.querySelectorAll('.season'); 
+  const btn=document.querySelector('.button');
+
+  btn.addEventListener('click', function(){
+    const content = parseInt(temp.value); // 입력값 숫자로 변환
+
+  if (isNaN(content)) {
+    alert('기온을 숫자로 입력해주세요.');
+    return;
+  }
+
+  let checkedSeason ='';
+  seasons.forEach(function(season){
+      //돌면서 계절을 찾아야함
+      if(season.checked) {
+        checkedSeason=season.value; 
+      } 
+  });
+
+if(checkedSeason==='') {
+        alert('계절을 선택해주세요');  
+        return;      
+      }
+   
+
+  if(checkedSeason==='Summer') {
+      if(content>=35) {
+        alert('폭염경보'); 
+      } else if(content>=33) {
+        alert('폭염 주의');
+      } else{
+        alert('좋은날씨입니다.');
+      }
+    } else if(checkedSeason=='Winter') {
+      if(content<=-15) {
+         alert('한파경보');
+      } else if(content<=-12) {
+        alert('한파주의보');
+      } else{
+        alert('좋은날씨입니다.');
+      }
+    } else {
+      alert ('좋은 날씨입니다.');
+    }
+    
+
+
+
+  });
+  
+
+
+
+</script> 
+  
+</body>
+</html>

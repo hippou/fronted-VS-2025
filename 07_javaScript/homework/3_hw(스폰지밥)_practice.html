@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  .box{
+    width:300px;
+    height:300px;
+    border-radius: 50%;
+    border: 10px solid lightgreen;
+    background-image:url('');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+</style>
+</head>
+<body>
+  <div><h1>스폰지밥,뚱이,징징이</h1></div>
+  <select class="select">
+    <option value="">선택하세요</option>
+    <option value="sponge" >스폰지밥</option>
+    <option value="dung">뚱이</option>
+    <option value="human">인간</option>
+  </select>
+  <div class="box"> </div>
+  
+<script>
+ const select = document.querySelector('.select');
+ const box = document.querySelector('.box');
+ 
+ select.addEventListener('change',function(){
+  //1.선택요소 찾기 
+  const selectedFactor =select.value;
+
+   if(selectedFactor==='') {
+    alert('선택해주세요');
+    return;
+   }
+  //2.이미지 바꾸기
+
+  box.style.backgroundImage = `url(./images/${selectedFactor}.png)`;
+  console.log('배경 이미지 경로:', box.style.backgroundImage);
+});
+
+
+</script>
+</body>
+</html>
+
+
+<!-- select.value는 <select> 요소의 선택된 <option>의 value 속성값을 반환한다. -->
+<!-- value 속성이 없으면 <option>의 텍스트 내용이 value처럼 동작해요. 위 경우 select.value는 "스폰지밥"이 됩니다. -->

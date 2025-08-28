@@ -167,7 +167,19 @@
   <!-- step: 값을 2씩 증가시킨다 -->
   <label for="volume">음량(0~50):</label>
   <input type="range" id="volume" min="0" max="50" step="2">
+  
+  <!-- Quiz -->
+  <span id="volumeValue"></span>
 
+  <script>
+  const volumeEl = document.getElementById('volume');
+  const volumevalueEl = document.getElementById('volumeValue');
+
+  volumeEl.addEventListener('input', function() {
+    volumevalueEl.textContent=volumeEl.value;
+  });
+  
+  </script>
   <hr>
 
   <!-- 비밀번호 -->

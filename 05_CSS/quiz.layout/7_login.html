@@ -13,103 +13,88 @@
       box-sizing: border-box;
     }
 
-    .form-input{
-      width:100%; 
-      outline:none; 
-      border:none; 
-      cursor:pointer;
-    }
-
-    /* 버튼의 공통 스타일 */
-    .btn{
-      width:100%;
-      padding:12px 20px; 
-      border:none;
-      border-radius: 8px;
-      font-size:17px;
-      font-weight:700;
-      cursor:pointer;
-
-    }
-    /* 버튼의 개별 스타일 */
-    .btn-login{
-      background-color: #09aa5c;
-      margin-top:40px;
-
-    }
-    .btn-join{
-      border:1px solid #09aa5c;
-      color:#09aa5c;
-      background-color: #fff;
-      margin-top: 10px;
-    }
-    .login-container {
-      width:460px;
-      border:1px solid #e1e3e5;
-      border-radius:12px;
-      padding:24px;
-    }
-
-    .login-background{
-     /* height:100%; 실수 많이함! 이거는 body의 100%이기때문에 변화가 없음 */
-     /* 중요!!!! 뷰포트의 높이만큼 가득 채우려면 100%가 아님 */
-     height:100vh;
-     display:flex;
-     justify-content: center;
-     align-items: center;
-    }
-
-    .login-container .id-box,
-    .login-container .pw-box{
-      height:60px;
-      border: 1px solid #c5ccd2; 
-      /*input을 아래에 배치하기 위해 패딩을 넣음 */
-      padding:27px 15px 8px;
-      position:relative;
-    }
-
-    .login-container .id-box.focused,.login-container .pw-box.focused {
-      border:2px solid #09aa5c;
-    }
-
-
-    .login-container .id-box{
-      border-radius: 8px 8px 0 0;
-
-    }
-    
-    .login-container .pw-box{
-      border-radius: 0 0 8px 8px;
-      /*두개가 겹쳐서 두꺼워 보이는 border를 조정하는 법 */
-      border-top: 0;
-    }
-
-    .login-container .text-label{
-      position:absolute; 
-      bottom:18px;
-      left:15px;
-      color: rgba(0,0,0,0.5);
-      transition:0.4s;
-    }
-
-    .login-container .form-input:focus+ .text-label{
-      font-size:12px;
-      bottom:30px;
-
-    }
-    
-    .login-container .icon-eye {
-      position:absolute;
-      top:18px;
-      right:15px;
+    .form-input {
+      width: 100%;
+      outline: none;
+      border: none;
       cursor: pointer;
     }
 
+    /* 버튼의 공통 스타일 */
+    .btn {
+      width: 100%;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 17px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    /* 버튼의 개별 스타일 */
+    .btn-login {
+      background-color: #09aa5c;
+      margin-top: 40px;
+    }
+    .btn-join {
+      border: 1px solid #09aa5c;
+      color: #09aa5c;
+      background-color: #fff;
+      margin-top: 10px;
+    }
 
+    .login-background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* height: 100%; */
+      /* 뷰포트의 높이만큼 가득 채우려면 100%가 아님에 주의! */
+      height: 100vh;
+    }
+    .login-container {
+      width: 460px;
+      border: 1px solid #e1e3e5;
+      border-radius: 12px;
+      padding: 24px;
+    }
 
+    .login-container .id-box,
+    .login-container .pw-box {
+      height: 60px;
+      border: 1px solid #c5ccd2;
+      padding: 27px 15px 8px;
+      position: relative;
+    }
+    .login-container .id-box.focused,
+    .login-container .pw-box.focused {
+      border: 2px solid #09aa5c;
+    }
+    .login-container .id-box {
+      border-radius: 8px 8px 0 0;
+    }
+    .login-container .pw-box {
+      border-radius: 0 0 8px 8px;
+      border-top: 0;
+    }
 
-
-
+    .login-container .text-label {
+      position: absolute;
+      bottom: 18px;
+      left: 15px;
+      color: rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+    .login-container .form-input:focus + .text-label,
+    .login-container .id-box.on .text-label,
+    .login-container .pw-box.on .text-label {
+      font-size: 12px;
+      bottom: 30px;
+    }
+    .login-container .icon-eye {
+      position: absolute;
+      top: 18px;
+      right: 15px;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -130,48 +115,66 @@
     </div>
   </div>
 
-  <script> //입력했을때 눈이 안보이게
-    const eyeIcon = document.querySelector('.icon-eye');
-    const pwInput = document.querySelector('#pw');
-    eyeIcon.addEventListener('click',function() {
-      const isHidden = pwInput.type === "password";
-
-     pwInput.type = isHidden ? "text" : "password";
-     eyeIcon.textContent = isHidden ? "visibility_off" : "visibility";
-    });
-
-
-
-
-
-
-
-
-
-
-
+  <script>
     const inputEls = document.querySelectorAll('input.form-input');
-    inputEls.forEach(function(inputEl){
+    const eyeIcon = document.querySelector('.icon-eye');
+    const pwInput = document.getElementById('pw');
+
+    inputEls.forEach(function (inputEl) {
       console.log(inputEl);
-      const parentEl = inputEl.parentElement; //부모요소를 반환
+      const parentEl = inputEl.parentElement; // 부모 요소를 반환
       console.log(parentEl);
-
-
-
-      //포커스가 주어졌을때 발생
-      inputEl.addEventListener('focus',function(){
+      
+      // focus: 포커스가 주어졌을 때 발생
+      inputEl.addEventListener('focus', function () {
         parentEl.classList.add('focused');
       });
 
-      //blur:포커스를 읽을때 발생
-      inputEl.addEventListener('blur',function(){
+      // blur: 포커를 잃을 때 발생
+      inputEl.addEventListener('blur', function () {
         parentEl.classList.remove('focused');
       });
 
+      // 이벤트 추가 실습
+      // change: 요소의 값이 변경되고 포커스를 잃었을 때 발생
+      inputEl.addEventListener('change', function () {
+        console.log('change 이벤트 발생!');
+        console.log(inputEl.value);
+        
+        if (inputEl.value) { // input 요소에 값이 있으면
+          parentEl.classList.add('on');
+        } else {
+          parentEl.classList.remove('on');
+        }
+      });
+      
+      //input: 요소가 입력을 받을때마다 변경된 직후에 발생 
+        inputEl.addEventListener('input',function(){
+        console.log('input이벤트 발생!');
+      }); 
     });
 
-  
 
+
+
+
+
+
+
+    eyeIcon.addEventListener('click', function () {
+      // if (pwInput.type === 'password') {
+      //   eyeIcon.textContent = 'visibility';
+      //   pwInput.type = 'text';
+      // } else {
+      //   eyeIcon.textContent = 'visibility_off';
+      //   pwInput.type = 'password';
+      // }
+
+      // 삼항 연산자 사용 시
+      const isPassword = pwInput.type === 'password';
+      pwInput.type = isPassword ? 'text' : 'password';
+      eyeIcon.textContent = isPassword ? 'visibility' : 'visibility_off';
+    });
   </script>
 </body>
 </html>

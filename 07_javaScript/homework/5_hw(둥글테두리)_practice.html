@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  img{
+      width: 150px; 
+      height: 150px;
+      border: 4px dotted green;
+      border-radius: 40px;
+  }
+
+</style>
+</head>
+<body>
+  <div>
+    <img src="./images/dung.png" alt="뚱이" class="img">
+  </div>
+  <div>
+    <label for="volbarr">음량(0~75)</label>
+    <input type="range" min="0" max="75" step="5" class="volbar" id="volbarr">
+   <span class="vol"></span>
+  </div>
+
+  
+<script>
+const volbar=document.querySelector('.volbar');
+const vol = document.querySelector('.vol');
+const img =document.querySelector('.img');
+
+volbar.addEventListener('input',function(){
+  vol.textContent= volbar.value;
+  img.style.border = `${volbar.value}px dotted green`; 
+});
+
+</script>
+
+
+</body>
+</html>

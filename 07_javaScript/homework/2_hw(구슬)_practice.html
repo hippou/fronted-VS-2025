@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .img{
+      width:50px;
+      height:50px;
+      border-radius:50%;
+      opacity:0.5;
+      background-color: aquamarine;
+    }
+    .add{
+      display:flex;
+      column-gap: 10px;
+      flex-wrap: wrap;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <h1>홀수? 짝수?</h1>
+  </div>
+  <div>
+    <button type="button" class="btn1">구슬추가</button>
+    <button type="button" class="btn2">홀짝 </button>
+    <button type="button" class="btn3">초기화</button>
+  </div>
+  <div class="add">
+    
+  </div>
+
+  <script>
+  
+  const btn1=document.querySelector('.btn1');
+  const btn2=document.querySelector('.btn2');
+  const btn3=document.querySelector('.btn3');
+  const img =document.querySelector('.img');
+  const add=document.querySelector('.add');
+
+   //1.구슬추가 
+  btn1.addEventListener('click', function(){
+   
+   add.innerHTML +='<div class="img"></div>' 
+  });
+
+  //2.홀짝
+
+btn2.addEventListener('click', function () {
+  const allball = document.querySelectorAll('.img').length;
+
+  if (allball !== 0) {
+    if (allball % 2 === 0) {
+      alert(`짝수입니다`);
+    } else {
+      alert(`홀수입니다`);
+    }
+  } else {
+    alert(`구슬이 없습니다`);
+  }
+});
+
+//3.초기화
+btn3.addEventListener ('click',function(){
+  add.innerHTML =' '; 
+});
+
+
+
+
+
+  </script>
+</body>
+</html>

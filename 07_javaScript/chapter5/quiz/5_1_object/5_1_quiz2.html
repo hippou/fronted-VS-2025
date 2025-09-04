@@ -20,6 +20,34 @@
 
 
     // 풀이2
+    const person = {
+      firstName: 'HyunJi', 
+      lastName: 'Yoo',
+      age: '32',
+      gender: '여자',
+      hobby: ['러닝','산책','음악감상','요리'],
+      eat: function() {  
+        return '탕수육,국밥,샌드위치' ;
+       },
+      speak: function() {
+        return '한국어,영어';
+      },
+      getFullName: function(){
+        return this.firstName+'이(가) 말을 합니다. "배드민턴 칠 사람?"';
+      }
+    }
+
+    document.write(person.firstName,'<br>');
+    document.write(person.lastName,'<br>');
+
+    document.write(`${person['age']}`,'<br>');
+    document.write(`${person['gender']}`,'<br>');
+    
+    document.write(person.hobby,'<br>');
+    
+    document.write(person.eat(),'<br>');
+    document.write(person.speak(),'<br>');
+    document.write(person.getFullName(),'<br>')
     
   </script>
 </body>

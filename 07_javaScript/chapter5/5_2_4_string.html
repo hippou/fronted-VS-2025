@@ -56,7 +56,7 @@
     // - 파일 확장자 추출을 위한 index를 알아내기 위해
 
     // 검색 시작 위치(index) 지정 가능
-    document.write('시작');
+    document.write('시작','<br>');
     pos = str.indexOf('locate',15);
     document.write(pos,'<br>');
     pos = str.lastIndexOf('locate',15);
@@ -67,37 +67,37 @@
     // 그렇지 않으면 false를 반환
     let has = str.includes('locate');
     document.write(has,'<br>');
-    has = str.includes('locate',15); 
+    has = str.includes('locate',15); //15번째부터 'locate'가 있는지
     document.write(has,'<br>');
     
 
     // 실습: 사용자로부터 입력받은 이메일 주소 유효성 검사(정규표현식을 안쓰는 경우)
     // 실무에서는 복잡한 패턴의 경우 정규식 사용!!(사용 시 가독성↓, 간결함↑)
-    document.write('<h4>실습: 이메일 주소 유효성 검사</h4>');
-    // const userEmail = prompt('당신의 이메일 주소는?');
-    const arrUrl = ['.co.kr', '.com', '.net', '.or.kr', '.go.kr'];
+    // document.write('<h4>실습: 이메일 주소 유효성 검사</h4>');
+    // const userEmail = prompt('당신의 이메일 주소는?','');
+    // const arrUrl = ['.co.kr', '.com', '.net', '.or.kr', '.go.kr'];
 
-    let check1 = false;
-    let check2 = true;
+    // let check1 = false;
+    // let check2 = false;
 
-    //@가 있는지 검사, @앞에 최소한 한자라도 있게 보장 a@
-    if(userEmail.indexOf('@') > 0) {
-      check1 = true;
-    }
+    // //@가 있는지 검사, @앞에 최소한 한자라도 있게 보장 a@
+    // if(userEmail.indexOf('@') > 0) {
+    //   check1 = true;
+    // }
 
-    //도메인 검사, a@a.com보장
-    for(let i =0 ; i< arrUrl.length; i++) {
-      if(userEmail.indexOf(arrUrl[i])>2) {
-        check=true;  //1개라도 일치하면 break 
-        break;
-      }
-    }
+    // //도메인 검사, a@a.com보장
+    // for(let i =0 ; i< arrUrl.length; i++) {
+    //   if(userEmail.indexOf(arrUrl[i])>2) {
+    //     check=true;  //1개라도 일치하면 break 
+    //     break;
+    //   }
+    // }
 
-    if(check1 && check2) {
-      document.write(userEmail,'<br>'); 
-    } else {
-      alert('이메일 형식이 잘못되었습니다.');
-    }
+    // if(check1 && check2) {
+    //   document.write(userEmail,'<br>'); 
+    // } else {
+    //   alert('이메일 형식이 잘못되었습니다.');
+    // }
 
     
 
@@ -109,13 +109,13 @@
     document.write(res,'<br>');
     
     
-    // 두번째 인수인 종료 위치를 생략하면, 시작 위치에서 문자열의 마지막 위치까지 잘라내서 반환
+    // 두번째 인수의 종료 위치를 생략하면, 시작 위치에서 문자열의 마지막 위치까지 잘라내서 반환
     res=str.slice(7);
     document.write(res,'<br>');
     
     
-    // 첫번째 인수인 시작 위치를 음수로 주면, 문자열의 끝에서부터 거꾸로 읽게 됨
-    res = str.slice(-12);
+    // 첫번째 인수의 시작 위치를 음수로 주면, 문자열의 끝에서부터 거꾸로 읽게 됨
+    res = str.slice(-12); //인데스 7부터 끝까지 잘라서 반환
     document.write(res,'<br>');
     
 
@@ -129,6 +129,7 @@
     // 5) substring()
     // slice() 함수와 동일한 기능
     // 인수로 음수를 허용하지 않는다는 차이
+    document.write('<h4>substring<h4>','<br>');
     res = str.substring(7,13);
     document.write(res,'<br>');
     res = str.substring(7);
@@ -138,7 +139,9 @@
     // 6) substr()
     // slice() 함수와 매우 유사
     // 시작 위치에서 지정한 길이 만큼 잘라내서 반환
-    res = str.sbustr(7,6); //인데스 7부터 6개 잘라내기 
+    // str = 'Apple, Banana, Kiwi';
+    document.write('<h4>substr<h4>','<br>');
+    res = str.substr(7,6); //인덱스 7부터 6개 잘라내기 
     document.write(res,'<br>');
     res = str.substr(7);
     document.write(res,'<br>');
@@ -153,21 +156,21 @@
     // 123456-1234567 -> 123456-1******
     // 1234561234567 -> 1234561******
     // 어떻게 입력하여도 뒤의 여섯자리만 *로 출력되도록 구현
-    const maskSsn = UserSsn.substring(0,userSsn.length-6) +'******';
-    document.write(maskSsn, '<br>');
+    // const maskSsn = UserSsn.substring(0,userSsn.length-6) +'******';
+    // document.write(maskSsn, '<br>');
     
 
     // 7) replace()
     // 문자열 내의 특정 문자열을 지정한 문자열로 바꾸고 새 문자열로 반환
     // 이때 바꾸려는 문자열이 하나 이상 있더라도 처음 발견된 문자열만 바꾸게 됨
     document.write('<h4>문자열 변환</h4>');
-    str = 'Please visit Seoul and Seoul!';
+    str = 'Please visit Seoul and SEOUL!';
     let n = str.replace('Seoul','Jeju');
     document.write(n,'<br>');
     
-
+    document.write('대소문자를 구분','<br>');
     // 대소문자를 구분
-    n = str.replace('SEOUL','Jeju');
+    n = str.replace('SEOUL','Paris');
     document.write(n,'<br>'); 
     
 
@@ -177,7 +180,7 @@
     // 주로 회원가입 시 유효성 검사(패스워드, 이메일, 전화번호 포맷 검증 등)에 사용
     n= str.replace(/SEOUL/i, 'Jeju'); //  i:대소문자를 구분하지 않겠다는 뜻 
     document.write(n,'<br>');
-    n= str.replace(/SEOUL/g, 'Jeju'); // g:일치하는 모든 문자열을 찾겠다는 뜻
+    n= str.replace(/SEOUL/g, 'Canada'); // g:일치하는 모든 문자열을 찾겠다는 뜻
     document.write(n,'<br>'); 
     // 실무 사용 사례: 
     // - 사람 이름, 제품명, 가격 등 데이터베이스의 데이터로 특정 부분을 바꾸는 프로그램의 경우 replace() 함수를 사용
@@ -212,7 +215,7 @@
     document.write('<h4>문자열 결합</h4>');
     text1 = 'Hello';
     text2 = 'World!';
-    let text3 = text1.concat('',text2);
+    let text3 = text1.concat(' - ',text2);
     document.write(text3,'<br>'); 
 
     let text4 = 'Hello'+' '+'World!'; // 보통 문자열 연산자(+)를 많이 사용 

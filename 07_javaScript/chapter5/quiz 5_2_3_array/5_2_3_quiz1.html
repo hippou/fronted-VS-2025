@@ -23,6 +23,21 @@
     // 즉, 원본도 같이 변경됨
 
     // 풀이1
+    const copyArr1 = originArr.slice(0,4);
+    document.write(copyArr1,'<br>');
+    const copyArr2 = originArr.slice(0); //인덱스 0부터 끝까지 복사
+    document.write(copyArr2,'<br>');
+    const copyArr3 = originArr.slice(); //배열 전체 복사 
+    document.write(copyArr3,'<br>');
+
+    const copyArr4 = [].concat(originArr); 
+    console.log(copyArr4);
+
+    // (참고)ES6차 spread 연산자
+    //...이 붙는순간 [ ]가 풀린다.
+    const copyArr5 = [...originArr];
+    document.write(copyArr5);
+
     
   </script>
 </body>

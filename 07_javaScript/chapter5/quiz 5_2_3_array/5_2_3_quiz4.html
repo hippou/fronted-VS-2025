@@ -14,7 +14,33 @@
     const points = [40, 100, 1, 5, 25, 10];
 
     // 풀이4
-    
+    //for문 사용시
+    let max = -Infinity;
+    let min = Infinity;
+
+    for(const el of points) {
+      if(max < el) max=el; 
+      if(min > el) min=el; 
+    }
+    document.write(`최소값: ${min}<br>`);
+    document.write(`최대값: ${max}<br>`); 
+
+
+    //sort()사용시
+    points.sort(function(a,b){
+      return a-b; 
+    })   
+    document.write('최소값:'+points[0]+'<br>');
+    document.write('최대값:'+points[5]+'<br>');
+
+    //(참고) ES6차 spread 연산자
+    document.write(`최소값: ${Math.min(1,2,3)}<br>`);
+    document.write(`최대값: ${Math.max(1,2,3)}<br>`);
+
+    document.write(`최소값: ${Math.min(...points)}<br>`);
+    document.write(`최대값: ${Math.max(...points)}<br>`);
+
+
   </script>
 </body>
 </html>

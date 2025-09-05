@@ -15,6 +15,9 @@
     const myColor = ['Red', 'Green', 'White', 'Black'];
 
     // 풀이2-1
+    const result = myColor.join("+");
+    document.write(result, '<br>');
+    
     
 
     // 2) 다음 배열의 모든 요소를 하나의 문자열로 결합하고 문서에 출력해보세요. 
@@ -34,6 +37,20 @@
     // 풀이2-2
     const userHtml = [];
     userHtml.push('<table border="1">');
+    for(const user of userList) {
+      userHtml.push('<tr>'); 
+      userHtml.push(`<td>${user.name}</td>`)
+      userHtml.push(`<td>${user.email}</td>`)
+      userHtml.push('</tr>');
+    }
+    // userHtml.push(`<tr><td>${userList[0].name}</td>`); 
+    // userHtml.push(`<tr><td>${userList[0].email}</td>`); 
+    // userHtml.push(`<tr><td>${userList[1].name}</td>`); 
+    // userHtml.push(`<tr><td>${userList[1].email}</td>`); 
+    userHtml.push('</table>');
+    
+    const result2 = userHtml.join();
+    document.write(result2);
     
   </script>
 </body>

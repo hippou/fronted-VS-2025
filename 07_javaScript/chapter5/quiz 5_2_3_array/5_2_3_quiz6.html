@@ -17,7 +17,23 @@
     const lottoArr = []; // 빈 배열
 
     // 풀이6
-    
+    while(lottoArr.length<6) {
+      const randomNum = Math.floor(Math.random()*45+1);
+      if(!lottoArr.includes(randomNum)) {
+        lottoArr.push(randomNum);
+      }
+    }
+
+    //오름차순
+    lottoArr.sort(function(a,b){
+      return a-b; 
+    })
+    document.write(lottoArr);
+
+    // es6차 화살표 함수 
+    // () => {} 는 function() {} 구조 
+    // retrun문이 하나만 있을때는   {},"return" 생략가능
+    // document.write(lottoArr.sort((a,b)=> a-b));
   </script>
 </body>
 </html>

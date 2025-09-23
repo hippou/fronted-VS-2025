@@ -26,7 +26,7 @@
        이 스타일이 무조건 적용되어야 하거나 절대 변경되어서는 
        안되는 겅우에만 사용! 
     */
-
+     /* color: inherit; */
     /* color:red !important; */
    }
    
@@ -35,7 +35,7 @@
       color:yellow;
     } */
         
-    /*선택자를 여러개 사용하여 명확하게 선택하면 우선수위가 올라감 */
+    /*선택자를 여러개 사용하여 명확하게 선택하면 우선순위가 올라감 */
     /* div.hello{
       color:green;
     } */
@@ -43,25 +43,24 @@
     /*점수가 같으면 가장 마지막에 해석된 스타일이 적용 */
     /* .hello{
       color: orange;
-    } */
+    } 
 
-    /* .hello{
+    .hello{
       color:yellowgreen;
     } */
     
-    div{
+    /* div{
       color:royalblue;
-    }
+    } */
     
-    *{
+    /* *{
       color:olive;
-    }
+    } */
     
     
     /*상속은 브라우저 기본 스타일보다도 우선순위가 낮음 */
     /* body{
       color:violet;
-
     } */
 
   </style>
@@ -70,8 +69,7 @@
   <div 
     id="hello" class="hello"
     style="color:brown;"
-  
-  >
+    >
 
     Hello world!
 

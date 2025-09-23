@@ -20,13 +20,13 @@
       background-color:orange;
     }
 
-    /*기본: 부모인 div태그에 맞춰 가로가 꽉참 */
+    /*기본: 부모인 body태그에 맞춰 가로가 꽉참 */
     .parent-1{
-      /* width: 300px; */
+      /* width: 200px; */
       /* max-width: 1000px; */
-      min-width: 1000px;
+      /* min-width: 1000px; */
       height:200px;
-      background-color: royalblue;
+      background-color: royalblue; 
     }
     /*기본: 부모인 parent-1태그에 맞춰 가로가 꽉참 */
     .child-1{
@@ -43,7 +43,7 @@
     .parent-2{
       width:300px;
       height:200px;
-      background-color: royalblue;
+      background-color: lightpink;
     }
 
     .child-2{
@@ -57,7 +57,7 @@
       /* height:100px; */
       /* height:60%; */
       height:50vh;
-      background-color: orange;
+      background-color: lightgreen;
     }
 
     .container-2 .item{
@@ -68,18 +68,19 @@
     }
 
     .container-2 .item:first-child{
-      /* width:auto; auto이면 블록요소의 특징인 부모의 가로길이의 100%를 가지게됨*/
+      /* width:auto; auto이면 블록요소의 특징인 부모의 가로길이의 100%를 가지게됨 */
+      width: 200px;
       /* margin:-50px; */
-      /*일반적인 경우 음수는 잘 사용안함 (간혹 요소 배치시 사용함) */
+      /*일반적인 경우 음수는 잘 사용안함 (간혹 요소 배치시 사용함 -겹치게됨) */
 
-      /* margin:10px */
+      /* margin:10px; */
       /* 값이 두개일때 10px -상하 20px-좌우 */
       /* 값이 세개이면 상,좌우,하 */
       /* 값이 내개이면 top을 기준으로 시계방향*/
       /* 원하는 방향으로도 마진을 줄 수 있음 */
       /* margin: 10px 20px;  */
       /* margin:10px 15px 20px; */
-      /* margin:10px 20px 30px 40px;  */
+      /* margin:10px 20px 30px 40px; */
       /* margin-bottom: 20px; */
 
       /* Tip! 중요! 전제조건: "가로 길이를 갖는" "블록" 요소의 수평 가운데 정렬 */
@@ -95,7 +96,7 @@
       /* padding: 10px; */
       /* padding: 10px 20px */
       /* padding: 10px 30px 20px */
-      padding: 10px 20px 30px 40px
+      /* padding: 10px 20px 30px 40px */
       /* padding-left: 20px */
     }
 
@@ -208,6 +209,7 @@
     <div class="parent-2">
       <div class="child-2"></div>
     </div>
+   
 
     <h4>2.margin,padding 실습</h4>
     <div class="container-2">

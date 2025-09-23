@@ -55,6 +55,7 @@
       color:red;
     } */
 
+
     /* div가 3번째 자식이라 선택 안됨 */
     /* .fruits div:first-child{
       color:red;
@@ -73,19 +74,23 @@
       color:red; 
     } */
 
-    /* .fruits *:nth-child(2n+1){
+    /* 
+    .fruits *:nth-child(2n+1){
       color:red;
     } */
 
-       /* .fruits *:nth-child(odd){
+    /* 
+    .fruits *:nth-child(odd){
       color:red; 
     } */
-
+     
+    /* 2번째 이후 (2번째 포함) 애들은 모두 색이 칠해짐 */
       /* .fruits *:nth-child(n+2){
       color:red; 
     } */
-/*      
-    .fruits *:not(span,h3) {
+
+         
+    /* .fruits *:not(span,h3) {
       color:red;
     } */
 
@@ -93,19 +98,17 @@
     /* 중요:n이 앞에 나와야 동작한다. */
     /* .fruits *:nth-child(-n+3) {
       color:red;
-    }*/
+    } */
 
     /* .fruits *:not(:nth-child(n+4)) {
       color:red; 
     } */
 
     /*last가 들어가면 거꾸로 세어진다. */
+    /* 3번째 이후(3번째 포함) 애들이 거꾸로 선택되어짐 */
    /* .fruits *:nth-last-child(n+3){
       color:blue;
     } */
-
-
-
   </style>
 
 </head>
